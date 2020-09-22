@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="王丽荣"><meta name="copyright" content="王丽荣"><meta name="generator" content="Hexo 4.2.1"><meta name="theme" content="hexo-theme-yun"><title>html和css | 前端工程师进阶之路</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;family=Source+Code+Pro&amp;display=swap" media="none" onload="this.media='all'"><script src="//at.alicdn.com/t/font_1140697_pem9yni52s.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link rel="shortcut icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"root":"/","title":"王丽荣的小站","version":"0.8.1","anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><meta name="description" content="1.html语义化 html自带的标签 特定含义的标签，便于团队开发和维护； 浏览器读取方便，有利于搜索引擎优化。 有的标签默认有一些样式，如果浏览器禁止了CSS样式，还可以达到突出样式的效果，h1. 2.行级块级元素 行级   不能设置宽高（内容撑开的）水平排列 span   a   i   b   strong  em   块级元素   可以设置宽高  垂直排列 div p ul  ol（无序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html和css">
+<meta property="og:url" content="https://kikiwlr.github.io/2020/09/22/html%E5%92%8Ccss/index.html">
+<meta property="og:site_name" content="前端工程师进阶之路">
+<meta property="og:description" content="1.html语义化 html自带的标签 特定含义的标签，便于团队开发和维护； 浏览器读取方便，有利于搜索引擎优化。 有的标签默认有一些样式，如果浏览器禁止了CSS样式，还可以达到突出样式的效果，h1. 2.行级块级元素 行级   不能设置宽高（内容撑开的）水平排列 span   a   i   b   strong  em   块级元素   可以设置宽高  垂直排列 div p ul  ol（无序">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-22T11:43:46.498Z">
+<meta property="article:modified_time" content="2020-09-22T11:50:45.449Z">
+<meta property="article:author" content="王丽荣">
+<meta name="twitter:card" content="summary"></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle sidebar-toggle-fixed hty-icon-button"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><aside class="sidebar"><script defer src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="王丽荣"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="王丽荣"></a><div class="site-author-name"><a href="/about/">王丽荣</a></div><a class="site-name" href="/about/site.html">前端工程师进阶之路</a><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">5</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">0</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">0</span></a></div><a class="site-state-item hty-icon-button" href="https://yun.yunyoujun.cn" target="_blank" rel="noopener" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://wpa.qq.com/msgrd?v=3&amp;uin=910426929&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/YunYouJun" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://weibo.com/jizhideyunyoujun" title="微博" target="_blank" style="color:#E6162D"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-weibo-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.douban.com/people/yunyoujun/" title="豆瓣" target="_blank" style="color:#007722"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-douban-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=247102977" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/yunyoujun/" title="知乎" target="_blank" style="color:#0084FF"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/1579790" title="哔哩哔哩" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/YunYouJun" title="Twitter" target="_blank" style="color:#1da1f2"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://t.me/elpsycn" title="Telegram Channel" target="_blank" style="color:#0088CC"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-telegram-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:me@yunyoujun.cn" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.now.sh/" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-send-plane-2-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#设置弹性：布局使子元素居中两种方式"><span class="toc-number">1.</span> <span class="toc-text">设置弹性：布局使子元素居中两种方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#垂直居中"><span class="toc-number">2.</span> <span class="toc-text">垂直居中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#水平居中"><span class="toc-number">3.</span> <span class="toc-text">水平居中</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://kikiwlr.github.io/2020/09/22/html%E5%92%8Ccss/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="王丽荣"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="前端工程师进阶之路"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">html和css</h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2020-09-22 19:43:46" itemprop="dateCreated datePublished" datetime="2020-09-22T19:43:46+08:00">2020-09-22</time></div><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content post-markdown"><p>1.html语义化</p>
+<p>html自带的标签</p>
+<p>特定含义的标签，便于团队开发和维护；</p>
+<p>浏览器读取方便，有利于搜索引擎优化。</p>
+<p>有的标签默认有一些样式，如果浏览器禁止了CSS样式，还可以达到突出样式的效果，h1.</p>
+<p>2.行级块级元素</p>
+<p>行级   不能设置宽高（内容撑开的）水平排列</p>
+<p>span   a   i   b   strong  em  </p>
+<p>块级元素   可以设置宽高  垂直排列</p>
+<p>div p ul  ol（无序）  h1 </p>
+<p>display :block   inline       inline-box(既可以设置宽高  又可以水平分布)</p>
+<p>css:</p>
+<p>1.常用选择器：id class  标签  </p>
+<p>E+F   E后边紧邻的兄弟</p>
+<p>E~F  E后边所有兄弟</p>
+<p>div p 后代选择器</p>
+<p>div &gt;p 子代选择器</p>
+<p>div,p  分组选择器</p>
+<p>伪类选择器   ：hover{}  划过加样式    active   visited   link  </p>
+<p>伪元素选择器  ：：after{}</p>
+<p>属性选择器   div[a]</p>
+<p>行级块元素</p>
+<p>img   input text button   即可以设置宽高  又水平排列</p>
+<p>2.优先级</p>
+<p>最高：  ！import  </p>
+<p>内联样式，style=””,</p>
+<p>id选择，#content，</p>
+<p>类，伪类，属性       .content</p>
+<p>标签选择器、伪元素      div   p   </p>
+<p>3.浮动float</p>
+<p>left  right</p>
+<p>清除浮动的方式：</p>
+<p>子元素浮动，父元素就不占空间了；给父元素清除浮动；</p>
+<p>解决办法：</p>
+<p>方法一：让父元素也浮动，然后根据内容设置宽度，</p>
+<p>方法二：父元素overflow:hidden;</p>
+<p>方法三：给父元素加高度；</p>
+<p>方法四：父子div，在子div 后中再加一个空的div ,设置clear:both;</p>
+<p>或者clear:left/right;</p>
+<p>方法五：给main清除浮动：</p>
+<p>.clearfix::after{</p>
+<p>content:’’;</p>
+<p>display:block;</p>
+<p>clear:both;</p>
+<p>}</p>
+<p>class=”main  clearfix”</p>
+<p>定位：</p>
+<p>position</p>
+<p>static:默认的</p>
+<p>absolute:绝对定位    相对于最近已经定位的祖先元素  定位后空间释放</p>
+<p>relative:相对定位      相对于自己初始位置   定位后空间不释放</p>
+<p>fixed：固定定位，相对浏览器位置   定位后空间释放</p>
+<p>sticky：到了一定的位置会吸住；商品导航那里。粘性吸顶效果</p>
+<p>盒模型：</p>
+<p>标准盒模型:width属性   content的宽度</p>
+<p>怪异盒模型：（ie6及以下的浏览器  不设置doctype）</p>
+<p>-webkit-box-sizing:border-box;</p>
+<p>width属性  content+padding+border宽度</p>
+<p>box-sizing:content-box 标准</p>
+<p>​        border-box  怪异</p>
+<p>外边距合并为大的那个</p>
+<p>1.父元素overflow:hidden;</p>
+<p>2.父元素浮动或定位</p>
+<p>3.子元素浮动或定位</p>
+<p>4.父元素加边框</p>
+<p>BFC(块级格式化上下文)，是一个独立的渲染区域，只有Block-level  box参与。</p>
+<p>规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
+<p>布局规则：</p>
+<p>内部的Box会在垂直方向，一个接一个地放置。</p>
+<p>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的ma</p>
+<p>每个元素的margin box的左边，与包含块border box的左边相接触</p>
+<p>BFC的区域不会与float box重叠。</p>
+<p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面</p>
+<p>计算BFC的高度时，浮动元素也参与计算</p>
+<p>哪些元素会生成BFC</p>
+<p>根元素  HTML</p>
+<p>float 属性不为none</p>
+<p>position为absolute或fixed</p>
+<p>display为inline-block，table-cell,table-caption,flex,,overflow不为visible</p>
+<p>8.重排重绘</p>
+<p>重绘就是在一个元素的外观被改变，但没有改变布局（宽高）的情况下发生，如改变visibility、outline\背景色。</p>
+<p>重排就是Dom的变化影响到了元素的几何属性（宽和高），浏览器会重新计算元素的几何属性，如：（改变窗口大小、改变文字大小、内容的的改变、浏览器窗口变化、style属性的改变等）</p>
+<p>reflow(回流)：当浏览器发现某个部分发生了点变化影响了布局，需要倒回去重新渲染。这个回退的过程叫reflow。</p>
+<p>display：inline block   inline-block   flex  table   table-cell</p>
+<p>显示隐藏：</p>
+<p>display:none;block;  不占空间 ，没有事件</p>
+<p>opacity:0 1        占空间  有事件，（透明，有事件）</p>
+<p>visibility:hidden  visible;        占空间   没有事件</p>
+<p>垂直水平居中：</p>
+<p>原因：为元素设置absolute定位时需要为父级设置非static定位</p>
+<p>注意：不给居中元素设置宽高的话，该元素会与设置非static定位的父级（没有的话会是html元素）同宽高。</p>
+<p>居中元素的父级position: relative;</p>
+<p>居中元素</p>
+<p>width: 40px;<br>height: 40px;<br>position: absolute;<br>top: 0;<br>right: 0;<br>bottom: 0;<br>left: 0;<br>margin: auto;</p>
+<p>让一个元素与浏览器页面显示区域同宽高</p>
+<p>设置html元素宽高：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">width: 100%;</span><br><span class="line">height: 100%;</span><br></pre></td></tr></table></figure>
+
+<p>设置该元素样式如下（该元素与html元素之间的元素不要设置非static定位）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;</span><br><span class="line">top: 0;</span><br><span class="line">right: 0;</span><br><span class="line">bottom: 0;</span><br><span class="line">left: 0;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置弹性：布局使子元素居中两种方式"><a href="#设置弹性：布局使子元素居中两种方式" class="headerlink" title="设置弹性：布局使子元素居中两种方式"></a>设置弹性：布局使子元素居中两种方式</h4><p>方式一:为居中元素父级设置以下样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">width: 400px;</span><br><span class="line">height: 400px;</span><br><span class="line">display: flex;</span><br></pre></td></tr></table></figure>
+
+<p>居中元素margin: auto;</p>
+<p>方式二:为居中元素父级设置以下样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">display: flex;</span><br><span class="line">align-items: center;</span><br><span class="line">justify-content: center;</span><br></pre></td></tr></table></figure>
+
+<h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a><strong>垂直居中</strong></h4><p>利用行高居中</p>
+<p>为居中元素父级设置以下样式：</p>
+<p>此方法可为元素内文字和行元素设置垂直居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">line-height: 50px;</span><br></pre></td></tr></table></figure>
+
+<h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a><strong>水平居中</strong></h4><p> 1.利用margin实现居中</p>
+<p>为居中元素添加以下样式：</p>
+<p>必须为居中元素设置宽</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">width: 200px;</span><br><span class="line">margin: auto;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.利用text-align样式居中</p>
+<p> 为居中元素父级添加以下样式：</p>
+<p>此方法可为元素内文字和行元素设置垂直居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-align: center;</span><br></pre></td></tr></table></figure></div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute.</div><div id="qr" style="display:none;"><div style="display:inline-block"></div><div style="display:inline-block"></div><div style="display:inline-block"></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>王丽荣</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://kikiwlr.github.io/2020/09/22/html%E5%92%8Ccss/" title="html和css">https://kikiwlr.github.io/2020/09/22/html%E5%92%8Ccss/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2020/09/22/ES6/" rel="prev" title="ES6"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">ES6</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2020/09/05/JS/" rel="next" title="JS"><span class="post-nav-text">JS</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div id="comment"><div class="comment-tooltip text-center"><span>点击按钮跳转 GitHub Issues 评论。</span><br><span>若没有本文 Issue，您可以使用 Comment 模版新建。</span><br><a class="hty-button hty-button--raised" id="github-issues" href="https://github.com/YunYouJun/yunyoujun.github.io/issues?q=is:issue+html和css" target="_blank" rel="noopener">GitHub Issues</a></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2020 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> 王丽荣</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v4.2.1</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v0.8.1</span></div></footer><a class="hty-icon-button" id="goUp" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></div><script defer src="/js/utils.js"></script><script defer src="/js/hexo-theme-yun.js"></script></body></html>
